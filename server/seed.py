@@ -2,10 +2,10 @@
 
 from random import choice as rc
 
-from app import app
-from models import db, Bakery, BakedGood
+from app import app, db, Bakery, BakedGood
 
 with app.app_context():
+    db.create_all()
 
     BakedGood.query.delete()
     Bakery.query.delete()
